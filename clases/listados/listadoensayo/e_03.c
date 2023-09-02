@@ -29,7 +29,7 @@ int main()
         if (auxiliar % 2 != 0)
         {
             // ciclo para imprimir la linea correctamente
-            for (int i = 0; i <= n; i++)
+            for (int i = 0; i <= n - 1; i++)
             {
                 // Si i es igual al auxiliar imprimira un espacio, asi formo la diagonal
                 if (i == auxiliar)
@@ -38,7 +38,7 @@ int main()
                 }
                 printf("#");
                 // Si i es igual a n, significa que sera el final del ciclo entonces quiero imprimir un salto de linea
-                if (i == n)
+                if (i == n - 1)
                 {
                     printf("#");
                     // Verifico que n no sea igual al auxiliar asi evito un salto de linea extra al terminar el programa
@@ -55,20 +55,22 @@ int main()
         // Mismo procedimiento pero para el caso "+"
         else
         {
-            for (int j = 0; j <= n; j++)
+            for (int j = 0; j <= n - 1; j++)
             {
                 if (j == auxiliar)
                 {
                     printf("%c", space);
                 }
                 printf("+");
-                if (j == n)
+                if (j == n - 1)
                 {
-                    printf("+");
                     if (n == auxiliar)
                     {
+                        printf("%c", space);
+                        printf("+");
                         break;
                     }
+                    printf("+");
                     printf("\n");
                 }
             }

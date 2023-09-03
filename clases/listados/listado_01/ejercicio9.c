@@ -1,6 +1,3 @@
-/*
-    Escriba un programa que pida un número entero n e imprima el resultado de la serie
-*/
 #include <stdio.h>
 
 int main()

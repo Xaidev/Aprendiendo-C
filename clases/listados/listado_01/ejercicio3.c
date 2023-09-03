@@ -1,14 +1,3 @@
-/*
-Escriba un programa que pida dos números enteros m y n, a continuación pida ingresar n números enteros,
-para luego imprimir los números ingresados que sean mayores a m.
-
-Ejemplo:
-
-Si tenemos m=7, n=5, y los valores 8, 9, 15, 20 y 10, el programa debe imprimir los valores 8, 9, 15, 20 y 10
-Si tenemos m=15, n=5, y los valores 8, 9, 15, 20 y 10, el programa debe imprimir el valor 20
-
-*/
-
 #include <stdio.h>
 int main()
 {

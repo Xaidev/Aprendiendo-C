@@ -1,8 +1,3 @@
-/*
-    Escriba un programa que pida dos números enteros m y n, e imprima el rango [1..n] módulo m.
-
-*/
-
 #include <stdio.h>
 
 int main()
@@ -13,6 +8,7 @@ int main()
     printf("Ingrersa numero m\n");
     scanf("%d", &m);
 
+    // Calcular los modulos
     for (int i = 1; i <= n; i++)
     {
         int x = i % m;

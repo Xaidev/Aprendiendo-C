@@ -1,12 +1,3 @@
-/*
-Escriba un programa que pida un número entero n e imprima su representación en notación binaria. En el caso de ingresar un número negativo,
-use notación complemento dos.
-
-Ejemplo:
-
-Con n=70, la respuesta espera es 0 1 0 0 0 1 1 0
-Con n=-70, la respuesta espera es 1 0 1 1 1 0 1 0
-*/
 #include <stdio.h>
 #include <math.h>
 int main()

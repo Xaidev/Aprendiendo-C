@@ -7,6 +7,7 @@ int main()
     printf("Ingresa el numero:\n");
     scanf("%d", &n);
 
+    // Calcular zig zag
     if (n >= 0)
     {
         int resultado = n / 2;

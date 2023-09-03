@@ -1,12 +1,3 @@
-/*
-Ejemplo:
-
-Con los valores a=3, b=3, c=3 y n=3 se genera el mensaje "Eureka!"
-Con los valores  a=-1, b=0, c=3 y n=5 se genera el mensaje "No se puede calcular"
-Con los valores a=3, b=4, c=5 y n=2 se genera el mensaje "Fermat se aplica a n > 2"
-
-*/
-
 #include <stdio.h>
 #include <math.h>
 
@@ -26,12 +17,12 @@ int main()
     while (1)
     {
         // Verificadores
-        if (n < 2)
+        if (n <= 2)
         {
             printf("Fermat se aplica a n > 2");
             break;
         }
-        if (a < 0 && b < 0 && c < 0)
+        if (a < 0 || b < 0 || c < 0)
         {
             printf("No se puede calcular");
             break;

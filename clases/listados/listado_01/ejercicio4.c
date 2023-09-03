@@ -1,8 +1,3 @@
-/*
-Observe el siguiente patrón que usa 8 símbolos '*' por cada uno de los 7 niveles.
-Escriba un programa que pida un número entero n e imprima el mismo patrón con n símbolos '*' por cada uno de los n-1 niveles.
-*/
-
 #include <stdio.h>
 int main()
 {

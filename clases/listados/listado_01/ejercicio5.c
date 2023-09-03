@@ -1,17 +1,3 @@
-/*
-Observe el siguiente patrón de impresión de 8 niveles.
-Escriba un programa que pida un número entero n e imprima el mismo patrón con n niveles.
-
-  ########
-   +++++++
-    ######
-     +++++
-      ####
-       +++
-        ##
-         +
-
-*/
 #include <stdio.h>
 
 int main()

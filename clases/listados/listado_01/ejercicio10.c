@@ -6,8 +6,11 @@ int main()
     int n;
     printf("Ingresa n\n");
     scanf("%d", &n);
+
+    // Para cada x desde 1 hasta n
     for (float i = 1; i <= n; i++)
     {
+        // Verifico en que cada caso estamos
         if (i > 0 && i <= 5)
         {
             int x = 2 * i;

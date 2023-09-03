@@ -2,22 +2,26 @@
 
 int main()
 {
-    int n;
+    int n; // Cantidad de notas
     scanf("%d", &n);
-    int arreglo[n];
+    int arreglo[n]; // Creo un arreglo que registra las notas
     int total = 0;
     int t = 0;
 
     while (1)
     {
+        // Verificador
         if (n >= 1 && n <= 10)
         {
+            // Registro las notas
             for (int i = 0; i < n; i++)
             {
                 int m;
                 scanf("%d", &m);
+                // Verifico que las notas enten en el rango correcto
                 if (m >= 3 && m <= 5)
                 {
+                    // Hago un contador de notas satisfactorias
                     if (m == 3)
                     {
                         t++;
@@ -31,12 +35,16 @@ int main()
                     return 0;
                 }
             }
+            // Cuento todas las notas
             for (int i = 0; i < n; i++)
             {
                 total += arreglo[i];
             }
+
+            // Saco el promedio
             float promedio = (float)total / n;
 
+            // Casos desde el mas especifico hasta el mas general
             if (t != 0)
             {
                 printf("None");

@@ -25,6 +25,7 @@ int main()
 
     while (1)
     {
+        // Verificadores
         if (n < 2)
         {
             printf("Fermat se aplica a n > 2");
@@ -35,7 +36,7 @@ int main()
             printf("No se puede calcular");
             break;
         }
-
+        // Declaro mi resultado
         int resultado;
         resultado = pow(a, n) + pow(a, n);
         if (resultado == pow(c, n))

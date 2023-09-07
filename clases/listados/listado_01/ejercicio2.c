@@ -12,15 +12,15 @@ int main()
     // Convertir numero a binario
     while (1)
     {
-        arreglo[contador] = (auxiliar % 2);
-        if (auxiliar < 2)
+        arreglo[contador] = (auxiliar % 2); // Voy guardando cada resto del numero
+        if (auxiliar < 2)                   // Si el numero es menor a 2 a contador le sumare 1, esto para completar bits correctamente
         {
             ++contador;
             break;
         }
-        auxiliar /= 2;
+        auxiliar /= 2; // Divido por dos el numero
         contador++;
-        if (auxiliar == 1)
+        if (auxiliar == 1) // Verifico que si el cuociente del numero es 1, mi ultimo digito sera directamente 1
         {
             arreglo[contador] = 1;
             contador++;
@@ -28,10 +28,11 @@ int main()
         }
     }
 
-    // Completar bits
+    // Completar bits, en el caso de de faltar
 
     if (contador < 8)
     {
+        // LLeno de ceros los espacios vacios
         for (int i = contador; i <= 7; i++)
         {
             arreglo[i] = 0;
@@ -69,7 +70,7 @@ int main()
     }
 
     // Print en pantalla
-    for (int i = 7; i >= 0; i--)
+    for (int i = 7; i >= 0; i--) // Imprimo al reves
     {
         printf("%d", arreglo[i]);
     }

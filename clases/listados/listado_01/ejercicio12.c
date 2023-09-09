@@ -3,7 +3,7 @@
 
 int main()
 {
-    int n;
+    int n, resultado = 0;
     scanf("%d", &n);
 
     // Verificador
@@ -11,8 +11,6 @@ int main()
     {
         return 0;
     }
-
-    int resultado = 0;
 
     // Si n<=0 entonces contara de 1 hasta n
     if (n <= 0)

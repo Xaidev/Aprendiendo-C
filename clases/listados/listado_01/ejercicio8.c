@@ -11,7 +11,7 @@ int main()
     // Calcular los modulos
     for (int i = 1; i <= n; i++)
     {
-        int x = i % m;
+        int x = i % m; // Calculo el modulo con una variable local e imprimo
         printf("%d ", x);
     }
     return 0;

@@ -9,9 +9,9 @@ int main()
 
     for (float i = 1; i <= n; i++)
     {
-        resultado += 1 / i;
+        resultado += 1 / i; // Sumatoria que va desde 1 a n
     }
-    printf("%0.6f", resultado);
+    printf("%0.6f", resultado); // Imprimo el resultado
 
     return 0;
 }

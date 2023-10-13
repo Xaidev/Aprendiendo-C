@@ -1,89 +1,69 @@
-/*
-Escriba un programa que pida dos números enteros n y m, para que luego pida ingresar suficientes valores enteros hasta llenar un arreglo A de largo n.
-Su programa deberá generar dos arreglos B y C, donde B contendrá todos los valores del arreglo A que sean menores a m,
-mientras que C contendrá todos los valores del arreglo A que sean mayores o iguales a m.
+// Como vimos en clases, toda permutación de números puede ser vista como un conjunto de ciclos. Escriba un programa que pida un número entero n,
+// para que luego lea n números que forman una permutación en el rango [1..n]. Su programa debe reportar el largo del ciclo más largo.
+// Por ejemplo, si tenemos la permutación [0, 6, 3, 10, 5, 11, 2, 9, 7, 4, 1, 8], la respuesta es 6, debido a que el ciclo más largo está dado por 4, 5, 11, 8, 7, 9.
 
-Ejemplos:
-- Para n=10, m=6 y A[10] = {8, -2, 0, 7, 6, 12, 86, 6, 4, 9} la respuesta es B[3] = {-2, 0, 4} y C[7] = {8, 7, 6, 12, 86, 6, 9}
+// Ejemplos:
 
-- Para n=10, m=99 y A[10] = {8, -2, 0, 7, 6, 12, 86, 6, 4, 9} la respuesta es B[10] = {8, -2, 0, 7, 6, 12, 86, 6, 4, 9} y C será vacío.
-*/
+// - Si tenemos la permutación [0, 6, 3, 10, 5, 11, 2, 9, 7, 4, 1, 8], la respuesta es 6, debido a que el ciclo más largo está dado por 4, 5, 11, 8, 7, 9.
+
+// - Si tenemos la permutación [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0], la respuesta es 12, ya que el ciclo más largo considera todos números de la permutación.
+
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    int n, m;
-    scanf("%d %d", &n, &m);
-    int A[n];
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    int *p = arr;
+
+    // Marcas para registar por donde ya he pasado
+    char marcas[n];
+
+    // LLeno el arreglo con ceros
+    memset(marcas, 0, sizeof(marcas));
+
+    // Lleno el arreglo de largo n
+    for (int i = 0; i < n; i++)
+    {
+        int aux;
+        scanf("%d", &aux);
+        *p = aux;
+        p++;
+    }
+
+    // Vuelvo el puntero a la primera posicion del arreglo
+    p = arr;
+
+    // Creo un puntero a marcas para ir marcando por donde ya he pasado en el ciclo
+    char *pmarcas = marcas;
+
+    // Calculo las maximas iteraciones de la permutacion
+    int max = 0;
 
     for (int i = 0; i < n; i++)
     {
-        int x;
-        printf("Ingresa el numero %d: ", i + 1);
-        scanf("%d", &x);
-        A[i] = x;
+        // Posicion donde empezare
+        int aux = i;
+        // Variable local c para obtener el valor real de cada permutacion
+        int c = 0;
+
+        // Comparo la posicion del ciclo en base al indice para determinar si no hemos pasado por ese punto
+        while (*(pmarcas + aux) == 0)
+        {
+            *(pmarcas + aux) = 1; // Marco la visita
+            aux = *(p + aux);     // Obtengo el nuevo indice en funcion del arreglo que ingresamos
+            c++;                  // Contador de cada iteracion
+        }
+        if (c >= max)
+        {
+            max = c;
+        }
+        printf("\n");
     }
-
-    int cmayor = 0, cmenor = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        if (A[i] >= m)
-        {
-            cmayor++;
-        }
-        else
-        {
-            cmenor++;
-        }
-    }
-
-    int B[cmayor], C[cmenor];
-    for (int i = 0, j = 0, k = 0; i < n; i++)
-    {
-        if (A[i] >= m)
-        {
-            B[j] = A[i];
-            j++;
-        }
-        else
-        {
-            C[k] = A[i];
-            k++;
-        }
-    }
-
-    printf("B[%d] = {", cmayor);
-    for (int i = 0; i <= cmayor; i++)
-    {
-        if (i == cmayor)
-        {
-            printf("}\n");
-            break;
-        }
-        else if (i == cmayor - 1)
-        {
-            printf("%d", B[i]);
-            continue;
-        }
-        printf("%d,", B[i]);
-    }
-
-    printf("C[%d] = {", cmenor);
-    for (int i = 0; i <= cmenor; i++)
-    {
-        if (i == cmenor)
-        {
-            printf("}");
-            break;
-        }
-        else if (i == cmenor - 1)
-        {
-            printf("%d", C[i]);
-            continue;
-        }
-        printf("%d,", C[i]);
-    }
-
+    printf("%d", max);
     return 0;
 }

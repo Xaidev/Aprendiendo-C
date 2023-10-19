@@ -31,17 +31,25 @@
 int main()
 {
 
-    int matriz[9][9];
+    int matriz[9][9] = {{9, 1, 2, 3, 4, 5, 6, 7, 8},
+                        {1, 9, 3, 4, 5, 6, 7, 8, 2},
+                        {2, 3, 9, 1, 6, 8, 4, 5, 7},
+                        {3, 2, 1, 9, 7, 4, 8, 6, 5},
+                        {7, 8, 4, 5, 9, 1, 2, 3, 6},
+                        {8, 7, 5, 6, 2, 9, 3, 1, 4},
+                        {4, 5, 6, 7, 8, 3, 9, 2, 1},
+                        {6, 4, 7, 8, 1, 2, 5, 9, 3},
+                        {5, 6, 8, 2, 3, 7, 1, 4, 9}};
     int *pmatriz = matriz[0];
 
-    // Lleno la matriz
-    for (int i = 0; i < 9; i++)
-    {
-        printf("Ingresa el elemento %d de la matriz 9x9\n", i + 1);
-        scanf("%d %d %d %d %d %d %d %d %d", pmatriz);
-        pmatriz += 9;
-    }
-    pmatriz = matriz[0]; // Regreso al primer elemento de la matriz
+    // // Lleno la matriz
+    // for (int i = 0; i < 9; i++)
+    // {
+    //     printf("Ingresa el elemento %d de la matriz 9x9\n", i + 1);
+    //     scanf("%d", pmatriz);
+    //     pmatriz++;
+    // }
+    // pmatriz = matriz[0]; // Regreso al primer elemento de la matriz
 
     // Imprimo la matriz
     for (int i = 0; i < 9 * 9; i++)
@@ -92,6 +100,35 @@ int main()
                 }
             }
         }
+    }
+
+    int submatriz[3][3] = {{0}};
+    int fila = 0;
+    int columna = 0;
+    for (int iteracion = 0; iteracion < 9; iteracion++)
+    {
+        int resultado = 0;
+        for (int i = fila; i < fila + 3; i++)
+        {
+            for (int j = columna; j < columna + 3; j++)
+            {
+                submatriz[i - fila][j - columna] = matriz[fila][columna];
+            }
+        }
+        for (int x = 0; x < 3; x++)
+        {
+            for (int y = 0; y < 3; y++)
+            {
+                resultado += submatriz[x][y];
+            }
+        }
+        if (resultado != 45)
+        {
+            printf("La matriz no es una solucion valida\n");
+            return 0;
+        }
+        fila += 3;
+        columna += 3;
     }
 
     // Si se repite algun elemento la matriz ingresada no es valida

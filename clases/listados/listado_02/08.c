@@ -44,7 +44,7 @@ int main()
         {
             totalmayusculas++;
         }
-        if (!isalpha(aux))
+        if (!isalpha(aux) && !isdigit(aux))
         {
             simbolos++;
         }
@@ -88,10 +88,11 @@ int main()
         fprintf(nuevo, "La cantidad de digitos del archivo es: %d\n", totaldigitos);
         fprintf(nuevo, "La cantidad de letras minuculas es: %d\n", totalminusculas);
         fprintf(nuevo, "La cantidad de letras mayusculas es: %d\n", totalmayusculas);
-        fprintf(nuevo, "La cantidad de simbolos que no son digitos o letras es: %d\n", simbolos);
+        fprintf(nuevo, "La cantidad de simbolos que no son digitos o letras es: %d\n", simbolos - 1); // -1 para no contar el EOF
         fprintf(nuevo, "La cantidad total de palabras es: %d\n", totalpalabras);
         fclose(nuevo);
     }
+    fclose(nuevo);
 
     return 0;
 }

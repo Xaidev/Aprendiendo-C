@@ -16,6 +16,7 @@ int main()
     scanf("%d %d", &n, &m);
     int A[n];
 
+    // Ingreso los numeros
     for (int i = 0; i < n; i++)
     {
         int x;
@@ -24,6 +25,7 @@ int main()
         A[i] = x;
     }
 
+    // Variables para determinar el tamaño de los arreglos en funcion de lo ingresado
     int cmayor = 0, cmenor = 0;
 
     for (int i = 0; i < n; i++)
@@ -39,6 +41,7 @@ int main()
     }
 
     int B[cmayor], C[cmenor];
+    // LLevo un indice para cada arreglo segun la cantidad de indices
     for (int i = 0, j = 0, k = 0; i < n; i++)
     {
         if (A[i] >= m)
@@ -53,6 +56,7 @@ int main()
         }
     }
 
+    // Print en pantalla
     printf("B[%d] = {", cmayor);
     for (int i = 0; i <= cmayor; i++)
     {

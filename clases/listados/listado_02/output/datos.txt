@@ -2,5 +2,5 @@ La cantidad total de caracteres del archivo es: 21
 La cantidad de digitos del archivo es: 4
 La cantidad de letras minuculas es: 11
 La cantidad de letras mayusculas es: 1
-La cantidad de simbolos que no son digitos o letras es: 5
+La cantidad de simbolos que no son digitos o letras es: 4
 La cantidad total de palabras es: 5

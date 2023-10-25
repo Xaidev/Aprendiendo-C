@@ -18,7 +18,7 @@ int main()
     int n;
     scanf("%d", &n);
     n = validacion(n);
-    int complemento = ~n + 1;
+    int complemento = ~n + 1; // Le sumo 1 para obtener la representacion binaria correcta
     for (int i = sizeof(int) * 8 - 1; i >= 0; i--)
     {
         printf("%d", (complemento >> i) & 1);

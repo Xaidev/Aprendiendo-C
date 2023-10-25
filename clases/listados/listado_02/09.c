@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -23,6 +24,11 @@ int main()
     {
         printf("Ingrese la cadena %d: \n", i + 1);
         scanf("%s", arreglo[i]);
+        if (strlen(arreglo[i]) < m)
+        {
+            printf("El largo debe ser mayor a %d\n", m);
+            exit(1);
+        }
     }
 
     char concatenacion[n * m + 1]; // +1 por el caracter nulo
@@ -34,6 +40,5 @@ int main()
         strncat(concatenacion, arreglo[i], m);
     }
     printf("%s\n", concatenacion);
-
     return 0;
 }

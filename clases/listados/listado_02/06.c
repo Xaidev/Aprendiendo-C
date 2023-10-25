@@ -26,6 +26,7 @@ int main()
     int hexa[999];
     int aux = n; // auxiliar para transformar el entero n a octal y hexadecimal
 
+    // Ciclo de transformacio na octogonal
     while (aux != 0)
     {
         octal[i] = aux % 8;
@@ -34,6 +35,7 @@ int main()
     }
     aux = n; // reseteo la variable auxiliar para transformar a hexadecimal
 
+    // Ciclo de transformacion a hexadecimal
     while (aux != 0)
     {
         hexa[k] = aux % 16;

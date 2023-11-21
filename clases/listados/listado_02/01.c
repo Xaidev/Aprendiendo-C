@@ -30,7 +30,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        if (A[i] >= m)
+        if (A[i] > m)
         {
             cmayor++;
         }
@@ -44,7 +44,7 @@ int main()
     // LLevo un indice para cada arreglo segun la cantidad de indices
     for (int i = 0, j = 0, k = 0; i < n; i++)
     {
-        if (A[i] >= m)
+        if (A[i] > m)
         {
             B[j] = A[i];
             j++;
